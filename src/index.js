@@ -1,7 +1,10 @@
-const elvenShieldRecipie = {
-  leatherStripes: 2,
-  ironIngot: 1,
-  refinedMoonstone: 4,
-};
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-console.log(elvenShieldRecipie);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
