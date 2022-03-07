@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <>
-      <h1>App</h1>
+      <h1>webpack App</h1>
       <img
         src={image}
         alt='img'

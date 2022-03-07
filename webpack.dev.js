@@ -6,6 +6,20 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   // loader
+
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
+
   module: {
     rules: [
       {
@@ -51,18 +65,4 @@ module.exports = {
     clean: true,
   },
   devtool: 'inline-source-map',
-
-  //* Plugin
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     title: 'webpack',
-  //     template: './public/index.html',
-  //     filename: '.dist/index.html',
-  //     inject: 'body',
-  //   }),
-  //   new MiniCssExtractPlugin({
-  //     filename: '[name].css',
-  //     chunkFilename: '[id].css',
-  //   }),
-  // ],
 };
